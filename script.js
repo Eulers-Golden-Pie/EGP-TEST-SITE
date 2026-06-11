@@ -18,43 +18,60 @@ if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-const storyCards = document.querySelectorAll(".story-card");
+/* Story Gallery Stacked Carousel */
+const storyCards = document.querySelectorAll(".story-card-stack");
 const prevStory = document.getElementById("prevStory");
 const nextStory = document.getElementById("nextStory");
 const storyDots = document.getElementById("storyDots");
 
 let currentStory = 0;
 
-function showStory(index) {
-  if (!storyCards.length) return;
+function updateStoryStack() {
+  storyCards.forEach((card, index) => {
+    card.classList.remove("active", "next", "back");
 
-  currentStory = (index + storyCards.length) % storyCards.length;
+    const relativeIndex =
+      (index - currentStory + storyCards.length) % storyCards.length;
 
-  storyCards.forEach((card, i) => {
-    card.classList.toggle("active", i === currentStory);
+    if (relativeIndex === 0) {
+      card.classList.add("active");
+    } else if (relativeIndex === 1) {
+      card.classList.add("next");
+    } else if (relativeIndex === 2) {
+      card.classList.add("back");
+    }
   });
 
-  document.querySelectorAll(".story-dot").forEach((dot, i) => {
-    dot.classList.toggle("active", i === currentStory);
+  document.querySelectorAll(".story-dot").forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentStory);
   });
 }
 
 if (storyCards.length && storyDots) {
-  storyCards.forEach((_, i) => {
+  storyCards.forEach((_, index) => {
     const dot = document.createElement("button");
     dot.className = "story-dot";
-    dot.setAttribute("aria-label", `Go to story ${i + 1}`);
-    dot.addEventListener("click", () => showStory(i));
+    dot.setAttribute("aria-label", `Go to story ${index + 1}`);
+    dot.addEventListener("click", () => {
+      currentStory = index;
+      updateStoryStack();
+    });
     storyDots.appendChild(dot);
   });
 
   if (prevStory) {
-    prevStory.addEventListener("click", () => showStory(currentStory - 1));
+    prevStory.addEventListener("click", () => {
+      currentStory = (currentStory - 1 + storyCards.length) % storyCards.length;
+      updateStoryStack();
+    });
   }
 
   if (nextStory) {
-    nextStory.addEventListener("click", () => showStory(currentStory + 1));
+    nextStory.addEventListener("click", () => {
+      currentStory = (currentStory + 1) % storyCards.length;
+      updateStoryStack();
+    });
   }
 
-  showStory(0);
+  updateStoryStack();
 }
