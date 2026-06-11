@@ -314,37 +314,39 @@
     </p>
   </div>
 
-  <div class="story-carousel">
-    <button class="story-btn" id="prevStory" aria-label="Previous story">‹</button>
+  <div class="story-stack-wrap">
+    <button class="story-arrow" id="prevStory" aria-label="Previous story">‹</button>
 
-    <article class="story-card active">
-      <p class="story-label">Example 1</p>
-      <h3 class="story-digits">09218</h3>
-      <p class="story-text">
-        A DONUT was balanced on a CAT's head. The cat tried eating it with CHOPSTICKS beside a CANDLE, until a SPIDER crawled out of the donut hole.
-      </p>
-      <p class="peg-count">Peg cards used: 5</p>
-    </article>
+    <div class="story-stack" id="storyStack">
+      <article class="story-card-stack active">
+        <p class="story-label">Example 1</p>
+        <h3>09218</h3>
+        <p class="story-text">
+          A <strong>DONUT</strong> was balanced on a <strong>CAT</strong>'s head. The cat tried eating it with <strong>CHOPSTICKS</strong> beside a <strong>CANDLE</strong>, until a <strong>SPIDER</strong> crawled out of the donut hole.
+        </p>
+        <p class="peg-count">Peg cards used: 5</p>
+      </article>
 
-    <article class="story-card">
-      <p class="story-label">Example 2</p>
-      <h3 class="story-digits">6 | 11 | 7 | 3</h3>
-      <p class="story-text">
-        Since it was SNOWing outside, I PAUSEd my WEEKly movie and decided to ride my TRICYCLE.
-      </p>
-      <p class="peg-count">Peg cards used: 4</p>
-    </article>
+      <article class="story-card-stack next">
+        <p class="story-label">Example 2</p>
+        <h3>6 | 11 | 7 | 3</h3>
+        <p class="story-text">
+          Since it was <strong>SNOW</strong>ing outside, I <strong>PAUSE</strong>d my <strong>WEEK</strong>ly movie and decided to ride my <strong>TRICYCLE</strong>.
+        </p>
+        <p class="peg-count">Peg cards used: 4</p>
+      </article>
 
-    <article class="story-card">
-      <p class="story-label">Example 3</p>
-      <h3 class="story-digits">43, 57, 29, 84</h3>
-      <p class="story-text">
-        We had a huge PARTY and it lasted three hours. I was stopped by a POLICE car for exceeding the speed limit by 2 MPH. I bought a DOUBLE-DOUBLE coffee and added seven creamers. Then I saw BUTTERFLIES, but four flew away.
-      </p>
-      <p class="peg-count">Peg cards used: 4</p>
-    </article>
+      <article class="story-card-stack back">
+        <p class="story-label">Example 3</p>
+        <h3>43, 57, 29, 84</h3>
+        <p class="story-text">
+          We had a huge <strong>PARTY</strong> that lasted three hours. I was stopped by a <strong>POLICE</strong> car for exceeding the speed limit by 2 MPH. I bought a <strong>DOUBLE-DOUBLE</strong> coffee and added seven creamers. Then I saw <strong>BUTTERFLIES</strong>, but four flew away.
+        </p>
+        <p class="peg-count">Peg cards used: 4</p>
+      </article>
+    </div>
 
-    <button class="story-btn" id="nextStory" aria-label="Next story">›</button>
+    <button class="story-arrow" id="nextStory" aria-label="Next story">›</button>
   </div>
 
   <div class="story-dots" id="storyDots"></div>
