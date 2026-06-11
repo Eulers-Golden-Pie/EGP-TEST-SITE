@@ -1,17 +1,16 @@
-/* Liquid Glass EGP UI */
 :root {
   --bg: #06111f;
-  --bg-soft: rgba(11, 27, 47, 0.55);
-  --card: rgba(255, 255, 255, 0.10);
-  --card-2: rgba(255, 255, 255, 0.14);
+  --bg-soft: #0b1b2f;
+  --card: #10233a;
+  --card-2: #0d2138;
   --text: #f8fafc;
-  --muted: #c8d6e8;
+  --muted: #b9c7d8;
   --blue: #38bdf8;
   --blue-light: #93c5fd;
+  --blue-deep: #2563eb;
   --gold: #fdcc2d;
-  --border: rgba(255, 255, 255, 0.22);
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
-  --glass-blur: blur(22px);
+  --border: rgba(147, 197, 253, 0.22);
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
 }
 
 * {
@@ -25,15 +24,13 @@ html {
 
 body {
   margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.13), transparent 30%),
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.14), transparent 30%),
+    var(--bg);
   color: var(--text);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
-  background:
-    radial-gradient(circle at top left, rgba(56, 189, 248, 0.32), transparent 28%),
-    radial-gradient(circle at top right, rgba(147, 197, 253, 0.28), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.22), transparent 30%),
-    linear-gradient(135deg, #03101d, #08233d 48%, #06111f);
-  background-attachment: fixed;
 }
 
 a {
@@ -50,10 +47,9 @@ img {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(6, 17, 31, 0.45);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(6, 17, 31, 0.84);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav {
@@ -77,37 +73,29 @@ img {
   width: 46px;
   height: 46px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 14px;
   border: 1px solid var(--border);
-  box-shadow: 0 0 32px rgba(56, 189, 248, 0.32);
+  box-shadow: 0 0 28px rgba(56, 189, 248, 0.24);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
   color: var(--muted);
   font-size: 0.95rem;
 }
 
-.nav-links a {
-  padding: 8px 12px;
-  border-radius: 999px;
-  transition: 0.2s ease;
-}
-
 .nav-links a:hover {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px);
+  color: var(--blue);
 }
 
 .nav-toggle {
   display: none;
-  background: rgba(255, 255, 255, 0.10);
+  background: none;
   color: var(--text);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 8px 12px;
   font-size: 1.1rem;
 }
@@ -128,7 +116,7 @@ img {
 
 .eyebrow {
   margin: 0 0 12px;
-  color: var(--blue-light);
+  color: var(--blue);
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-weight: 900;
@@ -180,7 +168,7 @@ h3 {
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  transition: 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .btn:hover {
@@ -188,17 +176,13 @@ h3 {
 }
 
 .btn.primary {
-  background: rgba(147, 197, 253, 0.72);
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
   color: #04111f;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 14px 40px rgba(56, 189, 248, 0.28);
 }
 
 .btn.secondary {
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .hero-media img {
@@ -206,8 +190,8 @@ h3 {
   min-height: 520px;
   height: 100%;
   object-fit: cover;
-  border-radius: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 30px;
+  border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
 
@@ -237,31 +221,24 @@ h3 {
 .feature-card,
 .component-card,
 .video-card,
-.concept-panel,
-.rule-item,
-details {
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+.concept-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
   border: 1px solid var(--border);
-  border-radius: 28px;
+  border-radius: 26px;
   padding: 28px;
   box-shadow: var(--shadow);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
 }
 
-.feature-number,
-.rule-item span {
+.feature-number {
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   margin-bottom: 22px;
-  border-radius: 18px;
-  background: rgba(147, 197, 253, 0.72);
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
   color: #04111f;
   font-weight: 900;
-  border: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .feature-card p,
@@ -274,6 +251,9 @@ details p {
 .concept-panel {
   margin-top: 24px;
   margin-bottom: 0;
+  background:
+    linear-gradient(135deg, rgba(56, 189, 248, 0.13), rgba(253, 204, 45, 0.06)),
+    var(--card-2);
 }
 
 .dark-section {
@@ -282,12 +262,11 @@ details p {
   padding-left: max(20px, calc((100% - 1120px) / 2));
   padding-right: max(20px, calc((100% - 1120px) / 2));
   background:
-    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.18), transparent 32%),
-    radial-gradient(circle at 90% 10%, rgba(253, 204, 45, 0.08), transparent 28%),
-    rgba(255, 255, 255, 0.035);
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(10px);
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.12), transparent 32%),
+    radial-gradient(circle at 90% 10%, rgba(253, 204, 45, 0.07), transparent 28%),
+    var(--bg-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .rules-list {
@@ -300,10 +279,21 @@ details p {
   grid-template-columns: 74px 1fr;
   gap: 20px;
   align-items: start;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .rule-item span {
-  margin-bottom: 0;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  color: #04111f;
+  font-weight: 900;
 }
 
 .component-card img {
@@ -311,7 +301,7 @@ details p {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   margin-bottom: 20px;
-  border-radius: 22px;
+  border-radius: 20px;
   border: 1px solid var(--border);
 }
 
@@ -324,10 +314,9 @@ details p {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 20px;
   border: 1px solid var(--border);
   background: #020617;
-  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.08);
 }
 
 .video-frame iframe {
@@ -344,6 +333,9 @@ details p {
 }
 
 details {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 20px;
   padding: 20px 22px;
 }
 
@@ -354,9 +346,10 @@ summary {
 }
 
 summary::marker {
-  color: var(--blue-light);
+  color: var(--blue);
 }
 
+/* Fix spacing around Hacks and FAQ */
 #hacks {
   padding-bottom: 38px;
 }
@@ -387,12 +380,10 @@ summary::marker {
 }
 
 .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid var(--border);
   padding: 30px 20px;
   text-align: center;
   color: var(--muted);
-  background: rgba(6, 17, 31, 0.38);
-  backdrop-filter: blur(18px);
 }
 
 @media (max-width: 900px) {
@@ -408,7 +399,13 @@ summary::marker {
   }
 
   .hero-media img {
-    min-height: 340px;
+    width: 100%;
+    min-height: 520px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
   }
 
   .nav-toggle {
@@ -423,9 +420,8 @@ summary::marker {
     top: 80px;
     padding: 18px;
     border: 1px solid var(--border);
-    border-radius: 22px;
-    background: rgba(8, 24, 39, 0.78);
-    backdrop-filter: blur(22px);
+    border-radius: 18px;
+    background: #081827;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -449,4 +445,105 @@ summary::marker {
   #faq {
     padding-top: 28px;
   }
+
+  .story-carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  gap: 18px;
+  align-items: center;
+}
+
+.story-card {
+  display: none;
+  min-height: 330px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 38px;
+  box-shadow: var(--shadow);
+}
+
+.story-card.active {
+  display: block;
+}
+
+.story-label {
+  margin: 0 0 14px;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 900;
+  font-size: 0.75rem;
+}
+
+.story-digits {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 22px;
+}
+
+.story-text {
+  color: var(--muted);
+  font-size: 1.14rem;
+  max-width: 850px;
+}
+
+.peg-count {
+  margin-top: 28px;
+  color: var(--blue-light);
+  font-size: 0.92rem;
+  font-weight: 900;
+}
+
+.story-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.story-btn:hover {
+  background: rgba(56, 189, 248, 0.16);
+  transform: translateY(-2px);
+}
+
+.story-dots {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.story-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+}
+
+.story-dot.active {
+  background: var(--blue);
+}
+
+@media (max-width: 900px) {
+  .story-carousel {
+    grid-template-columns: 1fr;
+  }
+
+  .story-btn {
+    display: none;
+  }
+
+  .story-card {
+    padding: 28px;
+  }
+}
 }
