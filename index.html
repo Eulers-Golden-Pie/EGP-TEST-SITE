@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Euler's Golden Pie | Story-Based Memory Game</title>
+  <meta name="description" content="Euler's Golden Pie is a story-based memory game that uses peg cards, creativity, and associations to help players memorize and recall long digit sequences." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#home" aria-label="Euler's Golden Pie home">
+        <img src="assets/logo.png" alt="Euler's Golden Pie logo" />
+        <span>Euler's Golden Pie</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+      <div class="nav-links">
+        <a href="#story-gallery">Stories</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#videos">Videos</a>
+        <a href="#components">Components</a>
+        <a href="#rules">Rules</a>
+        <a href="#hacks">Hacks</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-bg-orb orb-one"></div>
+      <div class="hero-bg-orb orb-two"></div>
+
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Story-Based Memory Game</p>
+          <h1>Remember digits by building stories.</h1>
+          <p class="hero-text">
+            Euler's Golden Pie turns random numbers into visual peg cards, creative stories,
+            and memorable associations so players can recall longer digit sequences with confidence.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#story-gallery">Explore Story Gallery</a>
+            <a class="btn secondary" href="#videos">Watch Gameplay</a>
+          </div>
+
+          <div class="hero-stats" aria-label="Game highlights">
+            <div><strong>Encode</strong><span>digits into pegs</span></div>
+            <div><strong>Build</strong><span>memorable stories</span></div>
+            <div><strong>Recall</strong><span>the sequence</span></div>
+          </div>
+        </div>
+
+        <div class="hero-showcase">
+          <div class="showcase-card main-showcase">
+            <img src="assets/setup.png" alt="Euler's Golden Pie gameplay setup" />
+          </div>
+
+          <div class="mini-demo-card">
+            <p class="mini-label">Example Sequence</p>
+            <p class="digits">6 3 0 5 7</p>
+            <p class="mini-story">
+              SNOW covered a TRICYCLE near a STOP sign while CONTINENTS appeared on a map.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story-gallery" class="section story-section">
+      <div class="section-header split-header">
+        <div>
+          <p class="eyebrow">Story Gallery</p>
+          <h2>See how digits become stories</h2>
+        </div>
+        <p>
+          Each example shows a random digit sequence, the peg-card idea behind it,
+          and a story that makes the sequence easier to remember.
+        </p>
+      </div>
+
+      <div class="story-grid">
+        <article class="story-card featured-story">
+          <div class="story-topline"><span class="difficulty">Beginner</span><span>5 digits</span></div>
+          <h3>09218</h3>
+          <p class="peg-line">DONUT → CAT → CHOPSTICKS → CANDLE → SPIDER</p>
+          <p>
+            A <strong>DONUT</strong> was balanced on a <strong>CAT</strong>'s head.
+            The cat tried eating it with <strong>CHOPSTICKS</strong> beside a
+            <strong>CANDLE</strong>, until a <strong>SPIDER</strong> crawled out of the donut hole.
+          </p>
+        </article>
+
+        <article class="story-card">
+          <div class="story-topline"><span class="difficulty">Beginner</span><span>4 chunks</span></div>
+          <h3>6 | 11 | 7 | 3</h3>
+          <p class="peg-line">SNOW → PAUSE → WEEK → TRICYCLE</p>
+          <p>
+            Since it was <strong>SNOW</strong>ing outside, I <strong>PAUSE</strong>d my
+            <strong>WEEK</strong>ly movie and decided to ride my <strong>TRICYCLE</strong>.
+          </p>
+        </article>
+
+        <article class="story-card">
+          <div class="story-topline"><span class="difficulty">Intermediate</span><span>5 digits</span></div>
+          <h3>81932</h3>
+          <p class="peg-line">SPIDER → CANDLE → CAT → TRICYCLE → CHOPSTICKS</p>
+          <p>
+            A <strong>SPIDER</strong> climbed onto a <strong>CANDLE</strong> and nearly burned itself.
+            Meanwhile, my <strong>CAT</strong> sat on my <strong>TRICYCLE</strong> and pushed my
+            <strong>CHOPSTICKS</strong> away to steal my noodles.
+          </p>
+        </article>
+
+        <article class="story-card">
+          <div class="story-topline"><span class="difficulty">Strategy</span><span>compression</span></div>
+          <h3>43, 57, 29, 84</h3>
+          <p class="peg-line">40+3 • 55+2 • 22+7 • 88−4</p>
+          <p>
+            We had a huge <strong>PARTY</strong> that lasted three hours. I was stopped by
+            a <strong>POLICE</strong> car for going 2 MPH over. I bought a
+            <strong>DOUBLE-DOUBLE</strong> coffee and added seven creamers. Then I saw
+            <strong>BUTTERFLIES</strong>, but four flew away.
+          </p>
+        </article>
+
+        <article class="story-card wide-story">
+          <div class="story-topline"><span class="difficulty">Advanced</span><span>20 digits</span></div>
+          <h3>33057270365759591953</h3>
+          <p class="peg-line">
+            TRICYCLE → HALF-AN-HOUR → STOP → CONTINENTS → CHOPSTICKS → HOCKEY → SNOW → SKIPPING → UP → HIGH-FIVE → CAT → CANDLE → 50% DISCOUNT
+          </p>
+          <p>
+            Today, I was riding my <strong>TRICYCLE</strong> for <strong>HALF-AN-HOUR</strong>,
+            when I had to <strong>STOP</strong> because people were crossing the road while talking
+            about the <strong>CONTINENTS</strong>. Later, after noodles with
+            <strong>CHOPSTICKS</strong> and a <strong>HOCKEY</strong> match, I saw
+            <strong>SNOW</strong> falling and someone <strong>SKIPPING</strong> <strong>UP</strong>
+            the stairs. At night, under <strong>CANDLE</strong> light, my <strong>CAT</strong>
+            slept on a phone bought at a <strong>50% DISCOUNT</strong>.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section process-section">
+      <div class="section-header centered">
+        <p class="eyebrow">How It Works</p>
+        <h2>The EGP memory loop</h2>
+        <p>Players do not simply repeat numbers. They transform the sequence into a chain of visual meaning.</p>
+      </div>
+
+      <div class="process-track">
+        <article class="process-step"><span>01</span><h3>Digits</h3><p>Start with a random digit sequence from a digit card.</p></article>
+        <article class="process-step"><span>02</span><h3>Peg Cards</h3><p>Convert digits into visual cards that are easier to imagine.</p></article>
+        <article class="process-step"><span>03</span><h3>Story</h3><p>Connect peg cards using actions, causes, tools, and consequences.</p></article>
+        <article class="process-step"><span>04</span><h3>Recall</h3><p>Decode the story back into the original digit sequence.</p></article>
+      </div>
+    </section>
+
+    <section id="videos" class="section video-section">
+      <div class="section-header split-header">
+        <div>
+          <p class="eyebrow">Videos</p>
+          <h2>Watch the game in action</h2>
+        </div>
+        <p>Start with the intro video to learn the game and components. Then watch the full gameplay demonstration.</p>
+      </div>
+
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="video-copy">
+            <span class="video-tag">Start Here</span>
+            <h3>Intro, Components, FAQs, and Sample Gameplay</h3>
+            <p>A short overview of the game explanation, components, common questions, and sample gameplay.</p>
+          </div>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/UqQAb56irXM" title="Euler's Golden Pie intro video" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-copy">
+            <span class="video-tag">Full Demo</span>
+            <h3>Complete Gameplay Demonstration</h3>
+            <p>A full walkthrough showing the Encode, Build, and Recall Phases from start to finish.</p>
+          </div>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/r7oWhKs37mU" title="Euler's Golden Pie full gameplay demonstration" allowfullscreen></iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="components" class="section components-section">
+      <div class="section-header centered">
+        <p class="eyebrow">Components</p>
+        <h2>Everything needed to play</h2>
+        <p>The game uses digit cards, peg cards, and peg stands to make memory visual, structured, and interactive.</p>
+      </div>
+
+      <div class="component-grid">
+        <article class="component-card"><img src="assets/digitcards.png" alt="Digit cards" /><div><h3>Digit Cards</h3><p>Random digit sequences that players must encode and recall.</p></div></article>
+        <article class="component-card"><img src="assets/pegcards.png" alt="Peg cards" /><div><h3>Peg Cards</h3><p>Visual association cards used to represent numbers and number groups.</p></div></article>
+        <article class="component-card"><img src="assets/pegstand.png" alt="Peg stand" /><div><h3>Peg Stand</h3><p>A stand that organizes peg cards during the Encode and Build Phases.</p></div></article>
+      </div>
+    </section>
+
+    <section id="rules" class="section rules-section">
+      <div class="section-header split-header">
+        <div><p class="eyebrow">Rules</p><h2>How to play</h2></div>
+        <p>The game is easy to begin, but the strategy grows as players learn better encoding techniques.</p>
+      </div>
+
+      <div class="rules-timeline">
+        <article><span>01</span><div><h3>Select a Digit Card</h3><p>Each player selects a digit card from one of the digit decks.</p></div></article>
+        <article><span>02</span><div><h3>Encode Phase</h3><p>Players use peg cards to represent the digits in the selected sequence.</p></div></article>
+        <article><span>03</span><div><h3>Build Phase</h3><p>Players connect the selected peg cards into a memorable story.</p></div></article>
+        <article><span>04</span><div><h3>Recall Phase</h3><p>Players exchange digit cards for verification and take turns reciting their sequences.</p></div></article>
+        <article><span>05</span><div><h3>Win the Game</h3><p>The player who correctly recalls the greatest number of digits in the original sequence wins.</p></div></article>
+      </div>
+    </section>
+
+    <section id="hacks" class="section hacks-section">
+      <div class="section-header split-header">
+        <div><p class="eyebrow">Strategies & Hacks</p><h2>Advanced encoding techniques</h2></div>
+        <p>There is no single correct way to encode a sequence. Players can use anchor numbers, mental adjustments, and stronger story logic to reduce peg-card usage.</p>
+      </div>
+
+      <div class="hack-layout">
+        <div class="hack-feature">
+          <h3>Creativity is part of the game.</h3>
+          <p>Two players may encode the same sequence in completely different ways and still arrive at the correct answer during recall.</p>
+        </div>
+
+        <div class="accordion-list">
+          <details><summary>Use Larger Peg Cards</summary><p>Instead of encoding 46 as 4 and 6, a player may choose a 40 or 44 peg card and mentally remember the remaining difference.</p></details>
+          <details><summary>Build Around Anchor Numbers</summary><p>Peg cards such as 33, 44, 55, 66, 77, 88, 99, and 100 can serve as memorable anchor points.</p></details>
+          <details><summary>Create Cause-and-Effect Stories</summary><p>Stories are stronger when objects interact. Make one object cause an action that affects another object.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section faq-section">
+      <div class="section-header centered">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="accordion-list faq-wide">
+        <details><summary>What is Euler's Golden Pie?</summary><p>Euler's Golden Pie is a memory game and learning system designed to make memorizing long number sequences faster, easier, and more enjoyable.</p></details>
+        <details><summary>What is unique about Euler's Golden Pie?</summary><p>Euler's Golden Pie combines memory training, creativity, and friendly competition. Players do not simply memorize digits—they transform them into stories, images, and meaningful connections.</p></details>
+        <details><summary>Who goes first?</summary><p>The youngest person between the two players goes first.</p></details>
+        <details><summary>What is the goal of the game?</summary><p>The goal is to memorize and recall increasingly longer digit sequences by converting numbers into memorable images and stories.</p></details>
+        <details><summary>How are ties broken?</summary><p>If two or more players correctly recall the same number of digits, the tied players continue to the next digit sequence length.</p></details>
+        <details><summary>Should I hide my cards or can they be public knowledge?</summary><p>Players may keep their cards visible. The challenge is not remembering the cards themselves, but using them to create effective stories.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>Euler's Golden Pie</strong>
+      <p>© <span id="year"></span> Euler's Golden Pie. Patent Pending.</p>
+    </div>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
